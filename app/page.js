@@ -33,7 +33,7 @@ export default function Home() {
       getActions: ({ id }) => {
         return [
           <GridActionsCellItem
-            key={params.id}
+            key={id}
             icon={<DeleteIcon />}
             label="Delete"
             color="inherit"

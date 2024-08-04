@@ -8,7 +8,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import { firestore } from '@/firebase';
 import { collection, getDocs, query, getDoc, updateDoc, setDoc, doc, deleteDoc } from "firebase/firestore";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, updateInventory } from "react";
 import { DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -33,6 +33,7 @@ export default function Home() {
       getActions: ({ id }) => {
         return [
           <GridActionsCellItem
+            key={params.id}
             icon={<DeleteIcon />}
             label="Delete"
             color="inherit"
